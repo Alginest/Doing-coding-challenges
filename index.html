@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ // return masked string
+  /*function sumArray(array) {
+      const min = Math.min(...array);
+      const max = Math.max(...array);
+      const minIndex = array.indexOf(min);
+      const maxIndex = array.indexOf(max);
+      const arr = array.splice(minIndex);
+      console.log(arr);
+      if (Array.isArray(array) && array.length > 1) {
+        return array.reduce((total, num) => total + num);
+      } else {
+        return 0;
+      }
+    }
+     
+   sumArray([6, 2, 1, 8, 10])*/
+
+/*
+   function betterThanAverage(classPoints, yourPoints) {
+      const classPts = classPoints.reduce((total, p) => total + p) / classPoints.length;
+      console.log(classPts);
+    }
+  betterThanAverage([2, 3], 5);*/
+// count monkeys
+/*
+  function monkeyCount(n) {
+      let count = [];
+      for(let i = 1; i <= n; i++){
+         count.push(i);
+      }
+      return count;
+      console.log(count);
+    }
+   monkeyCount(9);*/
+
+
+ /* It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+
+  Build a function that takes in two arguments(salary, bonus).Salary will be an integer, and bonus a boolean.
+
+  If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+
+  Return the total figure the individual will receive as a string prefixed with "£"(= "\u00A3", JS, Go, Java and Julia), "$"(C#, C++, Ruby, Clojure, Elixir, PHP, Python, Haskell and Lua) or "¥"(Rust).*/
+ /* function bonusTime(salary, bonus) {
+      if(bonus === true){
+        return '£' + salary * 10;
+      } else {
+        return salary
+      }
+    }
+    bonusTime(10000, true);
+    */
+   /* const reverseSeq = n => {
+        let arr = [];
+        for (let i = 1; i <= n; i++) {
+         arr.push(i);
+        }
+        return arr.reverse();
+      };
+      console.log(reverseSeq(5));*/
+   /*   function longest(s1, s2) {
+          const str = s1 + s2;
+          let uni = '';
+          for(let i = 0; i < str.length; i++){
+            if(uni.indexOf(str[i]) == -1){
+                uni += str[i];
+            }
+          }
+          const sorted = Array.from(uni).sort().join('').toString();
+        }
+      
+      var x = longest("aretheyhere", "yestheyarehere");
+      console.log(x);*/
+
+
+ /*If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+Note: If the number is a multiple of both 3 and 5, only count it once. Also, if a number is negative, return 0(for languages that do have them)*/
+
+  /*function solution(number) {
+    let arr = [];
+    for (let i = 1; i <= number; i++) {
+      if ( i * 3 <= number || i * 5 <= number) {
+        arr.push(i);
+       } 
+    }
+  return arr;
+}
+console.log(solution(23));*/
+/*Make a program that filters a list of strings and returns a list with only your friends name in it.
+
+If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+
+Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]*/
+
+/*
+  function friend(friends) {
+    return friends.filter(word => word.length === 4);
+  }*/
+
+
+  /*Implement a method that accepts 3 integer values a, b, c. The method should return true if a triangle can be built with the sides of given length and false in any other case.
+
+(In this case, all triangles must have surface greater than 0 to be accepted).*/
+  //function isTriangle(a, b, c) {
+     // return a + b > c && a + c > b && b + c > a;
+    //}
+
+/* There is a bus moving in the city, and it takes and drop some people in each bus stop.
+
+You are provided with a list (or array) of integer arrays (or tuples). Each integer array has two items which represent number of people get into bus (The first item) and number of people get off the bus (The second item) in a bus stop.
+
+Your task is to return number of people who are still in the bus after the last bus station (after the last array). Even though it is the last bus stop, the bus is not empty and some people are still in the bus, and they are probably sleeping there :D
+
+Take a look on the test cases.
+
+Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the return integer can't be negative.
+
+The second value in the first integer array is 0, since the bus is empty in the first bus stop. */
+
+  var number = function (busStops) {
+    const people = busStops.map(i => {
+       return i.reduce((total, num) => total - num)
+    });
+    const result = people.reduce((a, b) => a + b);
+    console.log(result);
+    return result;
+  }
+
+  console.log(number([[10, 0], [3, 5], [5, 8]]));
+</script>
+</html>
